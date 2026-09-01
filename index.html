@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surman Code Hub - Wild 8D Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onmousemove="handleMouseMove(event)">
+
+    <!-- 8D Background -->
+    <div class="cosmic-universe" id="universe">
+        <div class="wild-orb orb-pink" id="orbPink"></div>
+        <div class="wild-orb orb-blue" id="orbBlue"></div>
+        <div class="grid-mesh"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="app-container">
+        <div class="auth-card" id="authCard">
+            <div class="brand-header">
+                <h1 id="brandName">Surman Code Hub</h1>
+                <p id="brandTagline">Secure Vault Access</p>
+            </div>
+
+            <form id="authForm" onsubmit="handleSubmit(event)">
+                <div id="fieldsContainer"></div>
+                <button type="submit" class="submit-btn" id="submitBtn">UNLOCK VAULT ⚡</button>
+            </form>
+
+            <div class="switch-mode">
+                <p id="switchText">Want to build a new node? <span onclick="toggleMode()">Signup (Wild Mode)</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="founder-footer">
+        Architected by <span id="ceoName">Vishal Kumar</span> (<span id="ceoRole">Founder & Lead Developer</span>)
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

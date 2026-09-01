@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    background: #020617;
+    color: #f8fafc;
+}
+
+/* Fully Mouse-Controlled 8D Cosmic Background */
+.cosmic-universe {
+    position: fixed;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: radial-gradient(circle at 50% 50%, #0f172a 0%, #020617 70%, #000000 100%);
+    overflow: hidden;
+    z-index: 1;
+    perspective: 1000px;
+    pointer-events: none;
+}
+
+.wild-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.6;
+}
+
+.orb-pink {
+    width: 450px;
+    height: 450px;
+    background: #ec4899;
+    top: 10%;
+    left: 10%;
+    animation: pulseOrb 8s infinite alternate ease-in-out;
+}
+
+.orb-blue {
+    width: 550px;
+    height: 550px;
+    background: #38bdf8;
+    bottom: 10%;
+    right: 10%;
+    animation: pulseOrb 10s infinite alternate-reverse ease-in-out;
+}
+
+@keyframes pulseOrb {
+    0% { transform: scale(1) translate(0, 0); }
+    100% { transform: scale(1.3) translate(50px, -50px); }
+}
+
+.grid-mesh {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background-image: 
+        linear-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56, 189, 248, 0.08) 1px, transparent 1px);
+    background-size: 60px 60px;
+    transform: rotateX(65deg);
+    animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+    0% { transform: rotateX(65deg) translateY(0); }
+    100% { transform: rotateX(65deg) translateY(60px); }
+}
+
+/* Main App Wrapper */
+.app-container {
+    position: relative;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1200px;
+}
+
+/* The 8D Morphing Card */
+.auth-card {
+    width: 440px;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(30px);
+    border: 2px solid rgba(56, 189, 248, 0.4);
+    border-radius: 28px;
+    padding: 40px;
+    box-shadow: 
+        0 30px 90px rgba(0, 0, 0, 0.8),
+        0 0 50px rgba(56, 189, 248, 0.3);
+    transform-style: preserve-3d;
+    transition: border-color 0.5s ease;
+}
+
+.brand-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.brand-header h1 {
+    font-size: 2rem;
+    background: linear-gradient(135deg, #38bdf8, #ec4899, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+}
+
+.brand-header p {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-top: 5px;
+}
+
+/* --- SIGNUP WILD ANIMATION (Dur-dur se aana) --- */
+.signup-anim .input-group {
+    animation: wildFlyIn 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    opacity: 0;
+}
+
+@keyframes wildFlyIn {
+    0% { opacity: 0; transform: translateX(-350px) rotate(-20deg) scale(0.4); }
+    100% { opacity: 1; transform: translateX(0) rotate(0deg) scale(1); }
+}
+
+/* --- LOGIN CINEMATIC ANIMATION (Laser Zoom) --- */
+.login-anim .input-group {
+    animation: laserZoom 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    opacity: 0;
+}
+
+@keyframes laserZoom {
+    0% { opacity: 0; transform: scale(2.5) translateY(-60px); filter: blur(12px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.input-group:nth-child(1) { animation-delay: 0.05s; }
+.input-group:nth-child(2) { animation-delay: 0.15s; }
+.input-group:nth-child(3) { animation-delay: 0.25s; }
+.input-group:nth-child(4) { animation-delay: 0.35s; }
+
+.input-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.1rem;
+    z-index: 2;
+}
+
+.input-group input {
+    width: 100%;
+    background: rgba(2, 6, 23, 0.75);
+    border: 1px solid #334155;
+    padding: 14px 16px 14px 48px;
+    border-radius: 14px;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #ec4899;
+    box-shadow: 0 0 25px rgba(236, 72, 153, 0.5);
+    background: rgba(15, 23, 42, 0.95);
+}
+
+.submit-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #ec4899, #38bdf8);
+    color: #fff;
+    border: none;
+    padding: 14px;
+    font-weight: 800;
+    border-radius: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+    box-shadow: 0 10px 30px rgba(236, 72, 153, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submit-btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 40px rgba(56, 189, 248, 0.7);
+}
+
+.switch-mode {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+.switch-mode span {
+    color: #ec4899;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.switch-mode span:hover {
+    color: #38bdf8;
+    text-decoration: underline;
+}
+
+.founder-footer {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+    color: rgba(148, 163, 184, 0.6);
+    letter-spacing: 1px;
+    z-index: 10;
+}
+.founder-footer span {
+    color: #ec4899;
+    font-weight: bold;
+}
