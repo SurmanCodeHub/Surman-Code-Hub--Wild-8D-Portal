@@ -51,4 +51,4 @@ To run this project on your local system, follow the steps below:
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/YourUsername/surman-code-hub.git](https://github.com/YourUsername/surman-code-hub.git)
+   git clone [https://github.com/SurmanCodeHub/surman-code-hub.git](https://github.com/SurmanCodeHub/surman-code-hub.git)
